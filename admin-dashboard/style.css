@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding:0;
+
+}
+ul {
+    height: 100vh;
+    background-color: rgb(54, 158, 255) ;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-item{
+    margin-left: 2em;
+    margin-top: 2em;
+  }
+  li{
+    color: white;
+  }
+  li a {
+    display: block;
+  }
+.logo{
+    padding-top: 1em;
+    margin-left: .5em;
+    display: flex;
+    align-items: center;
+}
+.svg-logo{background-color: white;}
+
+body{
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}

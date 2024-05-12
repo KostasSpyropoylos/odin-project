@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button class="add">Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const lst = document.querySelector('ul')
+        const txt = document.querySelector('input')
+        const btn = document.querySelector('.add')
+        const del = document.querySelector('.delete')
+
+        let i = ['Eggs','Milk','Puree']
+        for (let j=0;j<i.length;j++){
+            let items = document.createElement('li')
+            let span = document.createElement('span')
+            let dele = document.createElement('button')
+            dele.innerText='Delete' 
+            dele.classList.add('delete') 
+            span.innerHTML = i[j]
+            lst.appendChild(items)
+            items.appendChild(span)
+            items.appendChild(dele)
+        }
+
+        function click(){
+            if(txt.value.length==0){
+                alert('Input field empty')
+            }else{
+
+                let item = document.createElement('li')
+                let span = document.createElement('span')
+                let del = document.createElement('button')    
+                del.innerText='Delete' 
+                del.classList.add('delete')          
+                span.innerHTML=txt.value
+                console.log(item)
+                lst.appendChild(item)
+                item.appendChild(span)
+                item.appendChild(del)
+            }
+            txt.value = ''
+        }
+        
+
+
+        btn.addEventListener("click", click);
+        const item = document.querySelector('li')
+        del.addEventListener('click', 
+            function () { 
+                item.parentNode.removeChild(item); 
+            }); 
+        
+    </script>
+  </body>
+</html>
